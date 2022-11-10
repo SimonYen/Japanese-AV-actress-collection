@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>
+		{%block title%}{%endblock%}
+	</title>
+	<link rel="shortcut icon" href="/assets/imgs/banana.png" type="image/x-icon">
+
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- BUTTER CAKE CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/buttercake@4.0.0/dist/css/butterCake.min.css">
+
+</head>
+
+<body>
+	{%include "layout/navbar.html"%}
+	<div class="container">
+		{%block content%}
+		{%endblock%}
+	</div>
+	<!-- jQuery first, then Butter Cake JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/buttercake@4.0.0/dist/js/butterCake.min.js"></script>
+
+</body>
+
+</html>
