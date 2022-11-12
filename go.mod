@@ -22,6 +22,7 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kataras/blocks v0.0.7 // indirect
 	github.com/kataras/golog v0.1.8 // indirect
+	github.com/kataras/iris v0.0.2
 	github.com/kataras/iris/v12 v12.2.0-beta6.0.20221101212547-4c188d86fdc1 // indirect
 	github.com/kataras/pio v0.0.11 // indirect
 	github.com/kataras/sitemap v0.0.6 // indirect

@@ -1,0 +1,71 @@
+<!-- MODAL -->
+<div class="modal" id="modalLogin">
+	<div class="modal-container">
+		<!-- header -->
+		<div class="modal-header">
+			<h5 class="modal-title">🔥登录框</h5>
+			<div class="modal-close" data-modal="modalLogin">
+				<i class="fa fa-close"></i>
+			</div>
+		</div>
+
+		<div class="modal-body">
+			<form action="/login" method="post">
+				<div class="group">
+					<label for="phone">📱电话号码</label>
+					<input type="tel" class="input" id="phone" name="phone" onchange="phoneController()" required>
+					<div class="success-message">
+						<small id="phone-s-m"></small>
+					</div>
+					<div class="error-message">
+						<small id="phone-e-m"></small>
+					</div>
+				</div>
+				<div class="group">
+					<label for="psw">㊙密码</label>
+					<input type="password" class="input" id="psw" name="psw" onchange="pswController()" required>
+					<div class="success-message">
+						<small id="psw-s-m"></small>
+					</div>
+					<div class="error-message">
+						<small id="psw-e-m"></small>
+					</div>
+				</div>
+				<div class="group">
+					<button id="btn" type="submit" class="btn primary block">🔥登录</button>
+				</div>
+			</form>
+		</div>
+
+
+	</div>
+</div>
+<script src="/assets/js/valid.js"></script>
+<script>
+	function phoneController() {
+		if (checkPhone("phone")) {//格式正确
+			document.getElementById("phone-s-m").innerHTML = "电话号码长度正确"
+			document.getElementById("phone-e-m").innerHTML = ""
+			//改变输入框颜色
+			document.getElementById("phone").className = "input success"
+		} else {
+			document.getElementById("phone-s-m").innerHTML = ""
+			document.getElementById("phone-e-m").innerHTML = "电话号码长度必须为11位"
+			//改变输入框颜色
+			document.getElementById("phone").className = "input danger"
+		}
+	}
+	function pswController() {
+		if (checkPSW("psw")) {//格式正确
+			document.getElementById("psw-s-m").innerHTML = "密码长度正确"
+			document.getElementById("psw-e-m").innerHTML = ""
+			//改变输入框颜色
+			document.getElementById("phone").className = "input success"
+		} else {
+			document.getElementById("phone-s-m").innerHTML = ""
+			document.getElementById("phone-e-m").innerHTML = "密码长度必须为6到15位"
+			//改变输入框颜色
+			document.getElementById("phone").className = "input danger"
+		}
+	}
+</script>
