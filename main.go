@@ -2,15 +2,24 @@ package main
 
 import (
 	"jyoyuu/controllers"
+	"jyoyuu/middlewares"
 	"jyoyuu/views"
 
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/middleware/logger"
 	"github.com/kataras/iris/v12/middleware/recover"
+	"github.com/kataras/iris/v12/sessions"
 )
 
 func main() {
 	app := iris.New()
+	//session中间件
+	sess := sessions.New(sessions.Config{
+		Cookie:       "_session_id",
+		AllowReclaim: true,
+	})
+	app.Use(sess.Handler())
+	app.Use(middlewares.Flash)
 	// recover 中间件从任何异常中恢复，如果有异常，则写入500状态码（服务器内部错误）。
 	app.Use(recover.New())
 
@@ -37,8 +46,6 @@ func main() {
 
 	//路由
 	app.Get("/", controllers.HomeController)
-	app.Get("/about", func(ctx iris.Context) {
-		ctx.View("about.html")
-	})
+	app.Post("/login", controllers.LoginController)
 	app.Run(iris.Addr(":9999"), iris.WithCharset("UTF-8"))
 }

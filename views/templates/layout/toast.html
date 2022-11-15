@@ -1,0 +1,21 @@
+<!-- Success -->
+{%if smsg%}
+<div class="alert success dismissable" role="alert">
+	{{smsg}}
+	<!-- ALERT CLOSE -->
+	<div class="alert-close">
+		<i class="fa fa-close"></i>
+	</div>
+</div>
+{%endif%}
+
+<!-- Danger -->
+{%if emsg%}
+<div class="alert danger dismissable" role="alert">
+	{{emsg}}
+	<!-- ALERT CLOSE -->
+	<div class="alert-close">
+		<i class="fa fa-close"></i>
+	</div>
+</div>
+{%endif%}
