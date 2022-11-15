@@ -1,6 +1,7 @@
 package main
 
 import (
+	"jyoyuu/config"
 	"jyoyuu/controllers"
 	"jyoyuu/middlewares"
 	"jyoyuu/views"
@@ -47,5 +48,9 @@ func main() {
 	//路由
 	app.Get("/", controllers.HomeController)
 	app.Post("/login", controllers.LoginController)
-	app.Run(iris.Addr(":9999"), iris.WithCharset("UTF-8"))
+
+	//读取配置文件
+	serverConfig := new(config.ServerConfig)
+	serverConfig.Read()
+	app.Run(iris.Addr(serverConfig.ToString()), iris.WithCharset("UTF-8"))
 }
