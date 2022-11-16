@@ -1,0 +1,62 @@
+<!-- MODAL -->
+<div class="modal" id="modalRegister">
+	<div class="modal-container">
+		<!-- header -->
+		<div class="modal-header">
+			<h5 class="modal-title">👏注册框</h5>
+			<div class="modal-close" data-modal="modalRegister">
+				<i class="fa fa-close"></i>
+			</div>
+		</div>
+
+		<div class="modal-body">
+			<form action="/register" method="post">
+				<div class="group">
+					<label for="phone-re">📱电话号码</label>
+					<input type="tel" class="input" id="phone-re" name="phone"
+						onchange="phoneController();btnController()" required>
+					<div class="success-message">
+						<small id="phone-s-m-re"></small>
+					</div>
+					<div class="error-message">
+						<small id="phone-e-m-re"></small>
+					</div>
+				</div>
+				<div class="group">
+					<label>✒昵称</label>
+					<input type="text" class="input" name="name" required>
+				</div>
+				<div class="group">
+					<label for="psw-re">㊙密码</label>
+					<input type="password" class="input" id="psw-re" name="psw"
+						onchange="pswController();btnController()" required>
+					<div class="success-message">
+						<small id="psw-s-m-re"></small>
+					</div>
+					<div class="error-message">
+						<small id="psw-e-m-re"></small>
+					</div>
+				</div>
+				<div class="group">
+					<label for="psw-re-2">㊙确认密码</label>
+					<input type="password" class="input" id="psw-re-2" name="psw2"
+						onchange="pswConfirmController();btnController()" required>
+					<div class="success-message">
+						<small id="psw-s-m-re-2"></small>
+					</div>
+					<div class="error-message">
+						<small id="psw-e-m-re-2"></small>
+					</div>
+				</div>
+				<div class="group">
+					<button id="btn-re" type="submit" class="btn primary block" disabled>👏注册</button>
+				</div>
+			</form>
+		</div>
+
+
+	</div>
+</div>
+<script src="/assets/js/valid.js"></script>
+<script src="/assets/js/register.js"></script>
+<script src="/assets/js/login.js"></script>

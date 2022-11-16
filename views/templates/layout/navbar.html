@@ -18,13 +18,30 @@
 			<ul class="menu ml-auto">
 				<li class="nav-item active"><a href="/" class="nav-link">🏠主页</a></li>
 				<li class="nav-item"><a href="" class="nav-link">👩分类</a></li>
+				<li class="nav-item"><a href="/" class="nav-link">👨关于</a></li>
+				{%if isAuth%}
+				<li class="nav-item"><a href="/logout" class="nav-link">🚪退出登录</a></li>
+				<li class="nav-item">
+					<div class="dropdown btn white">
+						<div>
+							{{name}}
+						</div>
+						<ul class="dropdown-menu">
+							<li><a href="#!">Link 2</a></li>
+							<li><a href="#!">Link 3</a></li>
+							<li><a href="#!">Link 4</a></li>
+						</ul>
+					</div>
+				</li>
+				{%else%}
 				<li class="nav-item">
 					<a class="nav-link modal-open" data-modal="modalLogin">
 						🍑登录
 					</a>
 				</li>
-				<li class="nav-item"><a href="" class="nav-link">🍉注册</a></li>
-				<li class="nav-item"><a href="/" class="nav-link">👨关于</a></li>
+				<li class="nav-item"><a href="/register" class="nav-link modal-open" data-modal="modalRegister">🍉注册</a>
+				</li>
+				{%endif%}
 			</ul>
 		</div>
 
