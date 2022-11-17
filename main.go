@@ -21,6 +21,8 @@ func main() {
 		AllowReclaim: true,
 	})
 	app.Use(sess.Handler())
+	app.OnErrorCode(iris.StatusNotFound, middlewares.PageNotFound)
+	app.OnErrorCode(iris.StatusInternalServerError, middlewares.InternalServerError)
 	app.Use(middlewares.Flash)
 	app.Use(middlewares.Info)
 	// recover 中间件从任何异常中恢复，如果有异常，则写入500状态码（服务器内部错误）。
